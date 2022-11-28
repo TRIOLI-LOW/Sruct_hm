@@ -1,9 +1,12 @@
 ﻿
 #include <iostream>
+#include <Windows.h>
+
 struct check {
-	std::string name;
-	int num;
-	double bal;
+	
+	std::string name = "";
+	int num = 0;
+	double bal = 0;
 };
 void rebal(check* ch){
 	std::cout << "Введите новый баланс: ";
@@ -12,7 +15,9 @@ void rebal(check* ch){
 }
 int main()
 {
-	setlocale(LC_ALL, "Russian");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
 	check ch;
 	std::cout << "Введите номер счета: ";
 	std::cin >> ch.num;
